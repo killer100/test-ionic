@@ -1,13 +1,5 @@
 <ion-view view-title="Busca tus películas" style="background:#eee;">
 
-	<ion-nav-bar class="bar-assertive">
-		<ion-nav-back-button>
-		</ion-nav-back-button>
-		<ion-nav-buttons side="left">
-			<button class="button button-icon button-clear ion-navicon" menu-toggle="left">
-        </button>
-		</ion-nav-buttons>
-	</ion-nav-bar>
 	<form ng-submit="vm.Buscar()">
 		<div class="bar bar-subheader item-input-inset">
 			<div class="item-input-wrapper">
@@ -27,10 +19,15 @@
 					<img class="full-image poster-height no-padding" ng-src="{{item.poster_path?'https://image.tmdb.org/t/p/w185_and_h278_bestv2'+item.poster_path:'img/pop-corn.jpg'}}">
 				</div>
 				<div class="col">
-					<h5>{{item.title}}</h5>
-					<p>Fecha de estreno: {{item.release_date | date: 'dd/MM/yyyy'}}</p>
-					<p>{{item.overview | limitTo:50}}{{item.overview.length > 50 ? '...' : ''}}</p>
+					<p class="text-right"> {{item.vote_average}} <i class="ion-star"></i> </p>
+					<h5 class="title-info">{{item.title}} </h5>
+					<p>Año: {{item.release_date | date: 'yyyy'}}</p>
+					<p>{{item.overview | limitTo:80}}{{item.overview.length > 80 ? '...' : ''}}</p>
+
 				</div>
+			</div>
+			<div class="item item-divider view-more">
+				<a ui-sref="app.movie({id:item.id})" class="subdued">Más información</a>
 			</div>
 
 		</div>

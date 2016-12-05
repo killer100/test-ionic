@@ -1,0 +1,23 @@
+<ion-view view-title="Detalle" style="background:#eee;">
+
+
+
+
+
+
+    <ion-content class="has-header">
+
+        <div class="item item-image">
+            <img class="full-image" ng-src="{{vm.movie.backdrop_path? 'https://image.tmdb.org/t/p/w500/'+vm.movie.backdrop_path:null}}"
+                alt="">
+        </div>
+
+        <div class="list card">
+            <div class="item item-text-wrap">
+                {{vm.movie.overview}}
+            </div>
+        </div>
+
+    </ion-content>
+
+</ion-view>

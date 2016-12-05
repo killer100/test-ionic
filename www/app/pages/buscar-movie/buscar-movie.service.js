@@ -1,10 +1,9 @@
 
 (function () {
 
-    var buscarMovieService = function ($http, $q) {
+    var buscarMovieService = function ($http, $q, API_KEY, API_URL) {
         var svc = this;
-        var API_KEY = '1c256e6b722d005e6ec151d5e1c4b3a5';
-        var url = 'https://api.themoviedb.org/3/search/movie';
+        var url = '/search/movie';
 
         svc.searchMovie = function (title, page) {
             var defered = $q.defer();
@@ -14,7 +13,7 @@
                 query: title,
                 language: 'es'
             };
-            $http.get(url, { params: params }).then(function (Response) {
+            $http.get(API_URL + url, { params: params }).then(function (Response) {
                 defered.resolve(Response.data);
             }, function (Error) {
                 defered.reject(Error);
@@ -27,7 +26,7 @@
         };
     };
 
-    buscarMovieService.$inject = ['$http', '$q'];
+    buscarMovieService.$inject = ['$http', '$q', 'API_KEY', 'API_URL'];
 
     angular.module('test.app').service('buscarMovieService', buscarMovieService);
 })();

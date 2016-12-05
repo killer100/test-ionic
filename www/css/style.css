@@ -29,3 +29,11 @@
   align-content: stretch;
   align-items: center;
 }
+
+.view-more {
+    font-size: 14px;
+}
+
+.title-info{
+    font-weight: bold !important;
+}
