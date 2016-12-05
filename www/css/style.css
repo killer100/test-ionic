@@ -1,0 +1,31 @@
+/* Empty. Add your own CSS if you like */
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.poster-height{
+    height: 100%;
+    display: block;
+}
+
+.poster-width{
+    height: 100%;
+}
+ 
+.image-loader-container {
+  margin: 9px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-color: #e5e5e5;
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
